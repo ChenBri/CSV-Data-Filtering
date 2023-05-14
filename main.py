@@ -6,6 +6,8 @@ import statistics
 from glob import glob
 from pathlib import Path
 
+pd.set_option("display.precision", 10)
+
 # Set dataframe
 stat_df = pd.DataFrame(
     columns=[
@@ -18,6 +20,7 @@ stat_df = pd.DataFrame(
         "Valence_Sum_Abs",
     ]
 )
+
 
 
 # Open the CSV file, remove all the unnecessary rows and save the file name
@@ -83,7 +86,7 @@ def selectFolder(folder):
 # python main.py <input_directory_path> <output_directory_path>
 def main():
     if len(sys.argv) < 2:
-        print("Usage: python main.py <input_directory_path>")
+        print("Usage: python main.py <input_directory_path> <output_directory_path>")
         return
 
     input_dir = str(sys.argv[1])
